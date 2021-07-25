@@ -1,0 +1,42 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+   
+    height: 100vh;
+}
+
+.form-horizontal{
+    width:50%;
+    float:left;
+}
+.form-check{
+    margin-left:100px;
+}
+
+.jumbotron{
+    width:40%;
+    float:right;
+    height:30%;
+}
+
+.total{
+    margin-top:320px;
+    float:right;
+}
+footer {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.bg__card__navbar {
+    background-color: #000000;
+}
+
+.bg__card__footer {
+    background-color: #000000 !important;
+}
+
+#add__new__list {
+    top: -38px;
+    right: 0px;
+}

@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+}
+<h2>@ViewBag.Title.</h2>
+<link href="~/Styles/Style.css" rel="stylesheet" />
+
+
+<div class="container my-5">
+<div class="card-body text-center">
+    <h4 class="card-title">Order Details</h4>
+    
+</div>
+<div class="card">
+    <button id="add__new__list" type="button" class="btn btn-success position-absolute" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Add a new Order</button>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Package</th>
+                <th scope="col">Total</th>
+                <th scope="col">list info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td>
+                    
+                </td>
+                <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td></td>
+                <td></td>
+                <td>
+                   
+                </td>
+                <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2"></td>
+                <td>
+                    
+                </td>
+                <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width:50%;">
+        <div class="modal-content">
+            <div class="card-body text-center">
+                <h4 class="card-title">Please SignIn</h4>
+                
+            </div>
+            <div class=" card col-8 offset-2 my-2 p-3">
+                <form >
+                    <div class="form-group" style="margin-left:200px;">
+                        <label for="listname">User name</label>
+                        <input type="text" class="form-control" name="listname" id="listname" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group" style="margin-left:200px;">
+                        <label for="datepicker">Password</label>
+                        <input type="password" class="form-control" name="datepicker" id="datepicker" placeholder="Password">
+                    </div>
+                    
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-block btn-primary" style="width:100px;margin-left:300px;">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

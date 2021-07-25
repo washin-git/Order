@@ -1,0 +1,188 @@
+﻿@model OrderPlacement.Models.User
+
+@{
+    ViewBag.Title = "Order Placement";
+}
+
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script language="javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<link href="~/Styles/Style.css" rel="stylesheet" />
+
+
+<h2>Order Placement</h2>
+
+
+@using (Html.BeginForm("Index", "Order", FormMethod.Post))
+{
+    <h2>Order Placement</h2>
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal" style=" margin-top:80px;">
+
+    <!-- First Name-->
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.FName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Last Name-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.LName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Email -->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Address-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- User Name-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Password-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Co-pass-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- NIC-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.NIC, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NIC, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NIC, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Phone-->
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Terms and Conditions-->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+
+        @Html.ValidationMessageFor(model => model.TermsAndConditions, "", new { @class = "text-danger" })
+        <label class="form-check-label" for="flexCheckDefault">
+            Terms and Conditions
+        </label>
+    </div>
+    <br />
+    <!-- Order Button-->
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Order" class="btn btn-success" style="width:100px; margin-top:100px;" />
+        </div>
+    </div>
+    <!-- Success message after data saved-->
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label class="label-success">@ViewBag.SuccessMessage</label><br />
+            <label class="label-success">@ViewBag.SuccessMessage2</label>
+        </div>
+    </div>
+
+    <!-- Error message-->
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label class="label-danger">@ViewBag.DuplicateMessage</label>
+        </div>
+    </div>
+
+</div>
+    <!-- Package Jumperton-->
+    <div class="container">
+        <h3>Packages</h3><br />
+        <div class="jumbotron">
+            <div class="form-check3">
+                <input class="form-check-input" type="checkbox" value="" id="package1">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Package 1
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>250 LKR</label><br />
+                <label>QTY</label>&nbsp;&nbsp;
+                <input type="text" class="form-control" id="qty3" size="20"><br />
+
+                <label>Sub Total :</label>&nbsp;&nbsp;
+
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="form-check2">
+                <input class="form-check-input" type="checkbox" value="" id="package2">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Package 2
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>350 LKR</label><br />
+                <label>QTY</label>&nbsp;&nbsp;
+                <input type="text" class="form-control" id="qty2">
+                <br />
+
+                <label>Sub Total :</label>&nbsp;&nbsp;
+
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="form-check3">
+                <input class="form-check-input" type="checkbox" value="" id="package3">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Package 3
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>550 LKR</label><br />
+                <label>QTY</label>&nbsp;&nbsp;
+                <input type="text" class="form-control" id="qty3" size="20"><br />
+
+                <label>Sub Total :</label>&nbsp;&nbsp;
+
+            </div>
+        </div><br />
+        <div class="total">
+            <label>Total Cost:</label>
+        </div>
+
+
+
+    </div>
+
+
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
